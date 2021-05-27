@@ -1,5 +1,5 @@
 resource "aws_security_group" "this" {
-  description = "Allow SSH"
+  description = "Allow RDP"
   name        = "${var.name}-sg"	
   vpc_id      = var.vpc_id
 

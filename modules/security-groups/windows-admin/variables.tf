@@ -14,13 +14,13 @@ variable "source_list" {
 }
 
 variable "service_list" {
-  description = "list of services for Linux Admin"
+  description = "list of services for Windows Admin"
   type        = list
   default = [
     {
-      "servicename" = "SSH",
-      "from_port" = 22
-      "to_port" = 22
+      "servicename" = "RDP",
+      "from_port" = 3389
+      "to_port" = 3389
       "protocol" = "tcp"
     }
   ]
