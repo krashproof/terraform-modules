@@ -1,0 +1,50 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  before_script: 
+    - echo "I am the first to get executed."
+    - echo "I get executed before the main actual script is executed"
+  script:
+    - echo "This is the build job"
+    - echo "I do whatever you tell me to do"
+  after_script:
+    - echo "I am primarily used for clean up and stuff."
+
+test_job_1:
+  stage: test
+  before_script: 
+    - echo "I run after the build job has completed execution."
+    - echo "I get executed before the main actual script is executed"
+  script:
+    - echo "This is the test job 1"
+    - echo "I run in parallel with test job 2"
+    - echo "I do whatever you tell me to do"
+  after_script:
+    - echo "I am primarily used for clean up and stuff."
+
+test_job_2:
+  stage: test
+  before_script: 
+    - echo "I run after the build job has completed execution."
+    - echo "I get executed before the main actual script is executed"
+  script:
+    - echo "This is the test job 2"
+    - echo "I run in parallel with test job 1"
+    - echo "I do whatever you tell me to do"
+  after_script:
+    - echo "I am primarily used for clean up and stuff."
+
+deploy_job:
+  stage: deploy
+  before_script: 
+    - echo "I run after the test jobs have completed execution."
+    - echo "This is the deploy job"
+    - echo "I get executed before the main actual script is executed"
+  script:
+    - echo "I do whatever you tell me to do"
+  after_script:
+    - echo "I am primarily used for clean up and stuff."
