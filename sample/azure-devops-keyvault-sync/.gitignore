@@ -1,0 +1,5 @@
+.terraform*
+*.tfstate
+*.tfstate.backup
+*-test.tftest.hcl
+to-remove.tf
