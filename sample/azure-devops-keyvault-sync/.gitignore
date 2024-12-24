@@ -3,3 +3,6 @@
 *.tfstate.backup
 *-test.tftest.hcl
 to-remove.tf
+to-remove-vars.tfvars
+*-local.sh
+*-local.tfvars
