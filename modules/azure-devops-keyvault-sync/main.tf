@@ -1,11 +1,11 @@
 locals {
-  variable_map = {
+  azdo_variables = {
     for library_var in data.azuredevops_variable_group.this.variable :
-    replace(library_var.name, "_", "-") => library_var.is_secret ? library_var.secret_value : library_var.value
+    library_var.name => library_var.is_secret ? library_var.secret_value : library_var.value
   }
   selected_variables = {
-    for name in var.azdo_library_variable_names :
-    name => local.variable_map[name]
+    for selected_var in var.azdo_library_variable_names :
+    replace(selected_var, "_", "-") => local.azdo_variables[selected_var]
   }
 }
 
