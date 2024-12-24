@@ -13,7 +13,7 @@ terraform {
 
 
 provider "azuredevops" {
-  org_service_url = "https://dev.azure.com/krashproof-net/" # To fill with your real AZDO ORG
+  org_service_url = "https://dev.azure.com/krashproof/" # To fill with your real AZDO ORG
 }
 
 # provider "azurerm" {
